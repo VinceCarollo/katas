@@ -6,11 +6,7 @@
 require 'pry'
 
 def solution(limit)
-  (3...limit).to_a.map do |num|
-    if num % 3 == 0
-      num
-    elsif num % 5 == 0
-      num
-    end
-  end.compact.sum
+  (3...limit).to_a.select do |num|
+    num % 3 == 0 || num % 5 == 0
+  end.sum
 end
